@@ -3,7 +3,7 @@ agent any
     stages {
         stage('Continuous Download-loans') {
             steps {
-                git branch: 'main', url: 'https://github.com/rajeeshchamavila/multibranch'
+                git branch: 'loans', url: 'https://github.com/rajeeshchamavila/multibranch'
             } 
         }
         stage('Continuous Build-loans') {
