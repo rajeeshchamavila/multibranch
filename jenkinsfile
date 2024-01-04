@@ -1,0 +1,16 @@
+pipeline {
+agent any
+    stages {
+        stage('Continuous Download-main') {
+            steps {
+                git branch: 'main', url: 'https://github.com/rajeeshchamavila/multibranch'
+            } 
+        }
+        stage('Continuous Build-main') {
+            steps {
+                sh "mvn -Dmaven.test.failure.ignore=true clean package"
+            } 
+        }
+        
+       }	   
+}
